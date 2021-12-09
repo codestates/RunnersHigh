@@ -11,7 +11,7 @@ const s3 = new aws.S3({
 const upload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: 'bucket-runners',
+    bucket: 'runnershigh-1',
     acl: 'public-read',
     key: (req, file, cb) => {
       cb(null, Date.now() + '.' + file.originalname.split('.').pop())

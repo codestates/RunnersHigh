@@ -13,8 +13,8 @@ module.exports = async (req, res) => {
         email: email
       }
     })
-    const same = bcrypt.compareSync(password, userInfo.dataValues.password)
-    if (same === false) {
+    const same = await bcrypt.compareSync(password, userInfo.dataValues.password)
+    if (!same) {
       res.status(400).send({ message: '로그인 정보가 일치하지 않습니다' })
     } else {
       delete userInfo.dataValues.password

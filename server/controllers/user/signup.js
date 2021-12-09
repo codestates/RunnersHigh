@@ -14,13 +14,13 @@ module.exports = async (req, res) => {
       }
     })
     if (!userInfo) {
-      const hashPassword = bcrypt.hashSync(password, 10)
+      const hashPassword = await bcrypt.hashSync(password, 10)
       await user.create({
         email: email,
         password: hashPassword,
         nickname: nickname,
         social_type: 'local',
-        image_url: 'https://bucket-runners.s3.ap-northeast-2.amazonaws.com/1636790124906.jpeg'
+        image_url: 'https://runnershigh-1.s3.ap-northeast-2.amazonaws.com/1639037178613.jpg'
       })
       res.status(201).send({ message: '회원가입 성공' })
     } else {

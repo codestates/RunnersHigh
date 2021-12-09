@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
       if (!req.file) {
         const payload = await post.create({
           title: req.body.title,
-          thumbnail_url: 'https://bucket-runners.s3.ap-northeast-2.amazonaws.com/1636790891462.jpeg',
+          thumbnail_url: 'https://runnershigh-1.s3.ap-northeast-2.amazonaws.com/1639037247869.jpg',
           text: req.body.text,
           location: req.body.location,
           latitude: req.body.latitude,

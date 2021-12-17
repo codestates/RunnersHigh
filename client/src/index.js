@@ -22,8 +22,8 @@ const persistConfig = {
 }
 const persisted = persistReducer(persistConfig, Reducer)
 const store = createStore(persisted, compose(
-  applyMiddleware(promiseMiddleware, ReduxThunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  applyMiddleware(promiseMiddleware, ReduxThunk)
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 )
 const persistor = persistStore(store)
